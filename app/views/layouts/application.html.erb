@@ -12,7 +12,7 @@
       <% if current_user.image? %>
       <img src="<%= current_user.image %>">
       <% else %>
-      <img src="<%= current_user.avatar.url(:thumb) %>">
+      <img class="user-image" src="<%= current_user.avatar.url(:thumb) %>">
       <% end %>
     <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
   <% else %>

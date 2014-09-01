@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140831165748) do
+ActiveRecord::Schema.define(version: 20140901151825) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,9 +26,10 @@ ActiveRecord::Schema.define(version: 20140831165748) do
     t.text     "amazon_purchase_link"
     t.boolean  "finished",             default: false
     t.integer  "recommendee_rating"
-    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "recommendee_id"
+    t.integer  "recommendor_id"
   end
 
   create_table "friend_requests", force: true do |t|
@@ -53,9 +54,10 @@ ActiveRecord::Schema.define(version: 20140831165748) do
     t.string   "media_type"
     t.boolean  "finished",           default: false
     t.integer  "recommendee_rating"
-    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "recommendee_id"
+    t.integer  "recommendor_id"
   end
 
   create_table "users", force: true do |t|
