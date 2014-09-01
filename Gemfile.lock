@@ -28,6 +28,8 @@ GEM
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
     arel (5.0.1.20140414130214)
+    backbars (0.0.5)
+      handlebars_assets
     bcrypt (3.1.7)
     builder (3.2.2)
     climate_control (0.0.3)
@@ -52,6 +54,11 @@ GEM
     execjs (2.2.1)
     faraday (0.9.0)
       multipart-post (>= 1.2, < 3)
+    handlebars_assets (0.17.1)
+      execjs (>= 1.2.9)
+      multi_json
+      sprockets (>= 2.0.3)
+      tilt
     hashie (3.3.1)
     hike (1.2.3)
     httparty (0.13.1)
@@ -166,6 +173,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  backbars
   coffee-rails (~> 4.0.0)
   devise
   httparty

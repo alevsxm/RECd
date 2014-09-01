@@ -13,4 +13,25 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require underscore
+//= require backbone
+//= require handlebars
+//= require_self
+//= require_tree ./templates
+//= require_tree ./backbone/routers
+//= require_tree ./backbone/models
+//= require_tree ./backbone/collections
+//= require_tree ./backbone/views
 //= require_tree .
+
+App = {
+  Models: {},
+  Views: {},
+  Collections: {},
+  Routes: {}
+};
+
+$(document).ready(function(){
+  App.router = new App.Router();
+  Backbone.history.start();
+});
