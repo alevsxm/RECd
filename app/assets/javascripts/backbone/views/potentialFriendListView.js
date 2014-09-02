@@ -1,5 +1,5 @@
 App.PotentialFriendListView = Backbone.View.extend({
-  el: '#search-results'
+  el: '#search-results',
   initialize: function() {
     console.log('New Potential Friend List View')
     this.listenTo(this.collection, 'reset', this.addAll)

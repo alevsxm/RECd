@@ -4,4 +4,4 @@ App.BookRecommendationSearchResultCollection = Backbone.Collection.extend({
   initialize: function() {
     console.log('New Book Recommendation Search Result Collection');
   }
-})
+});

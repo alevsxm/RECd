@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   end
 
   get 'book_recommendations/search'   =>  'book_recommendations#search', :as => :book_search
-  resources :book_recommendations, only: [:create]
+  resources :book_recommendations, only: [:index, :create]
 
   get 'movie_recommendations/movie_search'   =>  'movie_recommendations#movie_search', :as => :movie_search
   get 'movie_recommendations/tv_search'   =>  'movie_recommendations#tv_search', :as => :tv_search

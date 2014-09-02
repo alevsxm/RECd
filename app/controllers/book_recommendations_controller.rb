@@ -2,6 +2,12 @@ class BookRecommendationsController < ApplicationController
 
   before_action :authenticate_user!
 
+  def index
+    @user = current_user
+    @book_recommendations = @user.received_book_recommendations
+    render json: @book_recommendations.to_json, status: 200
+  end
+
   def search
     @search = params[:title]
     @results = Amazon.search(@search)
