@@ -3,7 +3,8 @@ class UsersController < ApplicationController
   before_action :authenticate_user!
 
   def friends
-    @friends = User.find(params[:id]).friends
+    @friends = current_user.friends
+    render json: @friends.to_json, status: 200
   end
 
   def show

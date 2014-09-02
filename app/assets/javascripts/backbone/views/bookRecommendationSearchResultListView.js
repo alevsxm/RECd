@@ -6,7 +6,7 @@ App.BookRecommendationSearchResultListView = Backbone.View.extend({
   },
   addOne: function(bookRecommendationSearchResult) {
     var bookRecommendationSearchResultView = new App.BookRecommendationSearchResultView({model: bookRecommendationSearchResult});
-    bookRecommendationSearchResultView.$el.insertAfter(this.$el);
+    this.$el.append(bookRecommendationSearchResultView.$el);
     console.log(this.$el);
     console.log(bookRecommendationSearchResultView.$el);
   },

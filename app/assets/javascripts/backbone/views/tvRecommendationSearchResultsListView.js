@@ -6,7 +6,7 @@ App.TvRecommendationSearchResultListView = Backbone.View.extend({
   },
   addOne: function(tvRecommendationSearchResult) {
     var tvRecommendationSearchResultView = new App.TvRecommendationSearchResultView({model: tvRecommendationSearchResult});
-    tvRecommendationSearchResultView.$el.insertAfter(this.$el);
+    this.$el.append(tvRecommendationSearchResultView.$el)
     console.log(this.$el);
     console.log(tvRecommendationSearchResultView.$el);
   },
