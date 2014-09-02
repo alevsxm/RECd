@@ -2,7 +2,7 @@ App.TvRecommendationSearchResultView = Backbone.View.extend({
   className: 'tv-recommendation-search-result',
   initialize: function() {
     console.log('New TV Recommendation Search Result View');
-    this.listenTo(this.model, 'change', this.render)
+    this.listenTo(this.model, 'change', this.render);
     this.render();
   },
   events: {
@@ -36,4 +36,4 @@ App.TvRecommendationSearchResultView = Backbone.View.extend({
                                            media_type: movieData["media_type"]}});
     App.movieRecommendationCreateModel.save();
   }
-})
+});

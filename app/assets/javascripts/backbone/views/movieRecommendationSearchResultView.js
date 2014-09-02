@@ -2,7 +2,7 @@ App.MovieRecommendationSearchResultView = Backbone.View.extend({
   className: 'movie-recommendation-search-result',
   initialize: function() {
     console.log('New Movie Recommendation Search Result View');
-    this.listenTo(this.model, 'change', this.render)
+    this.listenTo(this.model, 'change', this.render);
     this.render();
   },
   events: {
@@ -27,13 +27,14 @@ App.MovieRecommendationSearchResultView = Backbone.View.extend({
     App.movieRecommendationCreateModel.set({movie_recommendation: {
                                            recommendee_id: id,
                                            title: movieData["title"],
-                                           author: movieData["director"],
-                                           cast: movieData["cast"],
+                                           director: movieData["director"],
+                                           cast: movieData["cast"].join(', '),
                                            year_released: movieData["year_released"],
                                            plot_summary: movieData["plot_summary"],
-                                           cover_url: movieData["poster_url"],
+                                           poster_url: movieData["poster_url"],
                                            rating: movieData["rating"],
                                            media_type: movieData["media_type"]}});
+                                           debugger;
     App.movieRecommendationCreateModel.save();
   }
-})
+});

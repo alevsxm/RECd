@@ -13,6 +13,6 @@ App.BookRecommendationListView = Backbone.View.extend({
   addAll: function() {
     this.collection.each(function(bookRecommendation) {
       this.addOne(bookRecommendation);
-    }, this)
+    }, this);
   }
-})
+});

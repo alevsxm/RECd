@@ -2,6 +2,12 @@ class MovieRecommendationsController < ApplicationController
 
   before_action :authenticate_user!
 
+  def index
+    @user = current_user
+    @movie_recommendations = @user.received_movie_recommendations
+    render json: @movie_recommendations.to_json, status: 200
+  end
+
   def movie_search
     @search = params[:title]
     @results = TMDB.movie_search(@search)

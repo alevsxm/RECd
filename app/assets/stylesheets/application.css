@@ -21,6 +21,10 @@ img.user-image {
   max-height: 50px;
 }
 
+img.thumbnail {
+  max-height: 100px;
+}
+
 div#search-input {
   display: none
 }

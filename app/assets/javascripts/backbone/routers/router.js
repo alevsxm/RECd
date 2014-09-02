@@ -21,6 +21,9 @@ App.Router = Backbone.Router.extend({
     App.Collections.bookRecommendations = new App.BookRecommendationCollection();
     App.Views.bookRecommendationListView = new App.BookRecommendationListView({collection: App.Collections.bookRecommendations});
 
+    App.Collections.movieRecommendations = new App.MovieRecommendationCollection();
+    App.Views.movieRecommendationListView = new App.MovieRecommendationListView({collection: App.Collections.movieRecommendations});
+
     App.Views.searchFormView = new App.SearchFormView({collection: App.Collections.bookRecommendationSearchResults});
   },
 
@@ -30,30 +33,28 @@ App.Router = Backbone.Router.extend({
     $("div#book-recommendations").show();
     $("div#movie-recommendations").show();
     App.Collections.bookRecommendations.fetch({reset: true});
+    App.Collections.movieRecommendations.fetch({reset: true});
   },
 
   search: function() {
     console.log('Fired Search!');
+    $("div#container").children().hide();
     $("div#search-input").show();
     $("div#search-results").show();
   },
 
   bookSearchResults: function(searchTerm) {
-
-    console.log('Fired Search!');
     console.log('Looking for ' + searchTerm);
     // App.Collections.bookRecommendationSearchResults.reset();
     App.Collections.bookRecommendationSearchResults.fetch({reset: true, data: {title: searchTerm}});
   },
 
   movieSearchResults: function(searchTerm) {
-    console.log('Fired Search!');
     console.log('Looking for ' + searchTerm);
     App.Collections.movieRecommendationSearchResults.fetch({reset: true, data: {title: searchTerm}});
   },
 
   tvSearchResults: function(searchTerm) {
-    console.log('Fired Search!');
     console.log('Looking for ' + searchTerm);
     App.Collections.tvRecommendationSearchResults.fetch({reset: true, data: {title: searchTerm}});
   }

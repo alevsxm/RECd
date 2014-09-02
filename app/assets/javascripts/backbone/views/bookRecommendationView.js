@@ -6,10 +6,10 @@ App.BookRecommendationView = Backbone.View.extend({
     this.render();
   },
   // events: {
-  //   'click #book-recommendation'
+  //   'click #book-recommendation': 'showBookRecommendation'
   // },
   template: HandlebarsTemplates['bookRecommendations/bookRecommendationBrief'],
   render: function(){
     this.$el.html(this.template(this.model.toJSON()));
   }
-})
+});
