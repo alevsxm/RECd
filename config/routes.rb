@@ -17,6 +17,7 @@ Rails.application.routes.draw do
 
   get 'movie_recommendations/movie_search'   =>  'movie_recommendations#movie_search', :as => :movie_search
   get 'movie_recommendations/tv_search'   =>  'movie_recommendations#tv_search', :as => :tv_search
+  resources :movie_recommendations, only: [:create]
 
   get 'users/friends'  => 'users#friends', :as => :friends
 

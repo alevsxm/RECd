@@ -26,14 +26,14 @@ App.SearchFormView = Backbone.View.extend({
     console.log("Generate Movie Search Yo!")
     var searchTerm = this.$('input').val();
     console.log(searchTerm);
-    App.router.navigate('movies/?='+searchTerm);
+    App.router.navigate('movies/?='+searchTerm, {trigger: true});
   },
 
   generateTvSearch: function() {
     console.log("Generate TV Search Yo!")
     var searchTerm = this.$('input').val();
     console.log(searchTerm);
-    App.router.navigate('tv/?='+searchTerm);
+    App.router.navigate('tv/?='+searchTerm, {trigger: true});
   }
 
 })

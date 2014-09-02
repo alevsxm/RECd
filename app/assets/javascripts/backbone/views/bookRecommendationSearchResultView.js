@@ -14,8 +14,6 @@ App.BookRecommendationSearchResultView = Backbone.View.extend({
     this.$el.html(this.template(this.model.toJSON()));
   },
   recommendBook: function(){
-    // somehow prompt to select a friend
-    // maybe create friendsListView and append INSIDE THIS $EL
     App.Collections.friends = new App.FriendCollection();
     App.friendListView = new App.FriendListView({collection: App.Collections.friends});
     App.Collections.friends.fetch({reset: true});
@@ -23,8 +21,6 @@ App.BookRecommendationSearchResultView = Backbone.View.extend({
 
   },
   recommendationRequest: function(ev){
-    // get friend's user id
-    // send data & user id to rails route
     var id = $(ev.target).parent().attr('data-id');
     var bookData = this.model.toJSON();
     App.bookRecommendationCreateModel = new App.BookRecommendationCreateModel();

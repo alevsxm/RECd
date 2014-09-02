@@ -8,6 +8,5 @@ App.FriendView = Backbone.View.extend({
   template: HandlebarsTemplates['friends/friend'],
   render: function(){
     this.$el.html(this.template(this.model.toJSON()));
-    debugger;
   }
 })
