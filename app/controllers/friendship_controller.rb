@@ -1,6 +1,6 @@
 class FriendshipsController < ApplicationController
-  before_action :authenticate
-  before_action :authorize, only: [:index]
+  before_action :authenticate_user!
+  # before_action :authorize, only: [:index]
 
   def destroy
     @friendship = Friendship.find(params[:id])

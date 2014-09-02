@@ -34,7 +34,6 @@ App.MovieRecommendationSearchResultView = Backbone.View.extend({
                                            cover_url: movieData["poster_url"],
                                            rating: movieData["rating"],
                                            media_type: movieData["media_type"]}});
-                                           debugger;
     App.movieRecommendationCreateModel.save();
   }
 })

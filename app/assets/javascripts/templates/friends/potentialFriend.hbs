@@ -1,0 +1,11 @@
+<div data-id="{{id}}">
+  {{#if this.image}}
+    <span><img class="user-image" src="{{image}}"></span>
+  {{elseif}}
+    <span><img class="user-image" src="{{avatar.url}}"></span>
+  {{else}}
+    <span><img class="user-image" src="http://i.imgur.com/yiAFdv2.png"></span>
+  {{/if}}
+  <span>{{first_name}} {{last_name}}</span>
+  <button class="add-friend">Send Friend Request!</button>
+</div>

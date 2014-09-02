@@ -16,7 +16,7 @@ class TMDB
       result_hash[:director] = director_and_plot[0]
       result_hash[:plot_summary] = director_and_plot[1]
       result_hash[:cast] = tv_cast(result_hash[:tmdb_id]).take(5)
-      result_hash[:media_type] = "TV"
+      result_hash[:media_type] = "tv"
       tv_results << result_hash
     end
     tv_results
@@ -36,7 +36,7 @@ class TMDB
       director_and_cast =  movie_director_and_cast(result_hash[:tmdb_id])
       result_hash[:director] = director_and_cast[0]
       result_hash[:cast] = director_and_cast[1]
-      result_hash[:media_type] = "Movie"
+      result_hash[:media_type] = "movie"
       movie_results << result_hash
     end
     movie_results

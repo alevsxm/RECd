@@ -7,7 +7,10 @@ class FriendRequestsController < ApplicationController
   end
 
   def create
+    @friend_request = params[:friend_request]
+    @friend_request[:sender_id] = current_user.id
     @friend_request = FriendRequest.create(friend_request_params)
+    render json: @results.to_json, status: 200
   end
 
   def accept
