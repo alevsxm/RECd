@@ -25,7 +25,6 @@ class FriendRequestsController < ApplicationController
 
   def reject
     @friend_request = params[:friend_request]
-    binding.pry
     @friend_request_to_destroy = FriendRequest.find(@friend_request["id"])
     @friend_request_to_destroy.destroy
     render json: @results.to_json, status: 200

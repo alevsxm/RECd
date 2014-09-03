@@ -14,10 +14,12 @@ App.TvRecommendationSearchResultView = Backbone.View.extend({
     this.$el.html(this.template(this.model.toJSON()));
   },
   recommendMovie: function(){
-    App.Collections.friends = new App.FriendCollection();
-    App.friendListView = new App.FriendListView({collection: App.Collections.friends});
-    App.Collections.friends.fetch({reset: true});
-    this.$el.append(App.friendListView.$el.show());
+    if (!App.friendListView) {
+      App.Collections.friends = new App.FriendCollection();
+      App.friendListView = new App.FriendListView({collection: App.Collections.friends});
+      App.Collections.friends.fetch({reset: true});
+      this.$el.append(App.friendListView.$el.show());
+    }
 
   },
   recommendationRequest: function(ev){
@@ -36,5 +38,6 @@ App.TvRecommendationSearchResultView = Backbone.View.extend({
                                            media_type: movieData["media_type"]}});
     App.movieRecommendationCreateModel.save();
     App.friendListView.$el.html('');
+    App.friendListView = undefined;
   }
 });
