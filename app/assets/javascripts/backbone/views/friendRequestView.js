@@ -30,10 +30,6 @@ App.FriendRequestView = Backbone.View.extend({
   deleteRequest: function() {
     console.log('NOOO your denying me??');
     this.model.reject();
-    // var friendRequestData = this.model.toJSON();
-    // debugger;
-    // App.friendRequestDeleteModel = new App.FriendRequestModel();
-    // App.friendRequestDeleteModel.reject();
   }
 
 });

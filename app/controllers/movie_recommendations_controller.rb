@@ -5,7 +5,7 @@ class MovieRecommendationsController < ApplicationController
   def index
     @user = current_user
     @movie_recommendations = @user.received_movie_recommendations.where(finished: false)
-    render json: @movie_recommendations.to_json, status: 200
+    render json: @movie_recommendations.as_json(include: :recommendor), status: 200
   end
 
   def movie_search
@@ -33,7 +33,12 @@ class MovieRecommendationsController < ApplicationController
     render json: @book.to_json, status: 200
   end
 
+  def destroy
+    MovieRecommendation.find(params[:id]).destroy
+    render json: @book.to_json, status: 200
+  end
 
+  private
 
   def movie_recommendation_params
     params.require(:movie_recommendation).permit(:title, :director, :cast,

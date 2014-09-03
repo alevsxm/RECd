@@ -17,7 +17,7 @@ App.BookRecommendationSearchResultView = Backbone.View.extend({
     App.Collections.friends = new App.FriendCollection();
     App.friendListView = new App.FriendListView({collection: App.Collections.friends});
     App.Collections.friends.fetch({reset: true});
-    this.$el.append(App.friendListView.$el);
+    this.$el.append(App.friendListView.$el.show());
 
   },
   recommendationRequest: function(ev){
@@ -33,5 +33,6 @@ App.BookRecommendationSearchResultView = Backbone.View.extend({
                                            cover_url: bookData["cover_url"],
                                            amazon_purchase_link: bookData["amazon_url"]}});
     App.bookRecommendationCreateModel.save();
+    App.friendListView.$el.html('');
   }
 })

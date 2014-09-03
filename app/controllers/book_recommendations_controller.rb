@@ -4,8 +4,8 @@ class BookRecommendationsController < ApplicationController
 
   def index
     @user = current_user
-    @book_recommendations = @user.received_book_recommendations
-    render json: @book_recommendations.to_json, status: 200
+    @book_recommendations = @user.received_book_recommendations.where(finished: false)
+    render json: @book_recommendations.as_json(include: :recommendor), status: 200
   end
 
   def search
@@ -20,6 +20,14 @@ class BookRecommendationsController < ApplicationController
     @book = BookRecommendation.create(book_recommendation_params)
     render json: @book.to_json, status: 200
   end
+
+  def update
+    @book = params[:book_recommendation]
+    BookRecommendation.update(@book["id"], {finished: @book["finished"], recommendee_rating: @book["recommendee_rating"]})
+    render json: @book.to_json, status: 200
+  end
+
+  private
 
   def book_recommendation_params
     params.require(:book_recommendation).permit(:title, :author,

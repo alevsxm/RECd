@@ -1,8 +1,8 @@
 App.BookRecommendationListView = Backbone.View.extend({
   el: '#book-recommendations',
   initialize: function() {
-    console.log('New Book Recommendation List View')
-    this.listenTo(this.collection, 'reset', this.addAll)
+    console.log('New Book Recommendation List View');
+    this.listenTo(this.collection, 'reset', this.addAll);
   },
   addOne: function(bookRecommendation) {
     var bookRecommendationView = new App.BookRecommendationView({model: bookRecommendation});

@@ -17,7 +17,7 @@ App.MovieRecommendationSearchResultView = Backbone.View.extend({
     App.Collections.friends = new App.FriendCollection();
     App.friendListView = new App.FriendListView({collection: App.Collections.friends});
     App.Collections.friends.fetch({reset: true});
-    this.$el.append(App.friendListView.$el);
+    this.$el.append(App.friendListView.$el.show());
 
   },
   recommendationRequest: function(ev){
@@ -36,5 +36,6 @@ App.MovieRecommendationSearchResultView = Backbone.View.extend({
                                            media_type: movieData["media_type"]}});
                                            debugger;
     App.movieRecommendationCreateModel.save();
+    App.friendListView.$el.html('');
   }
 });

@@ -14,5 +14,13 @@ App.MovieRecommendationModel = Backbone.Model.extend({
         id: this.get("id")
       }}
     });
+  },
+
+  reject: function() {
+    $.ajax({
+      type: "DELETE",
+      url: "movie_recommendations",
+      data: {id: this.get("id")}
+    });
   }
 });

@@ -17,7 +17,7 @@ App.TvRecommendationSearchResultView = Backbone.View.extend({
     App.Collections.friends = new App.FriendCollection();
     App.friendListView = new App.FriendListView({collection: App.Collections.friends});
     App.Collections.friends.fetch({reset: true});
-    this.$el.append(App.friendListView.$el);
+    this.$el.append(App.friendListView.$el.show());
 
   },
   recommendationRequest: function(ev){
@@ -27,13 +27,14 @@ App.TvRecommendationSearchResultView = Backbone.View.extend({
     App.movieRecommendationCreateModel.set({movie_recommendation: {
                                            recommendee_id: id,
                                            title: movieData["title"],
-                                           author: movieData["director"],
-                                           cast: movieData["cast"],
+                                           director: movieData["director"],
+                                           cast: movieData["cast"].join(', '),
                                            year_released: movieData["year_released"],
                                            plot_summary: movieData["plot_summary"],
-                                           cover_url: movieData["poster_url"],
+                                           poster_url: movieData["poster_url"],
                                            rating: movieData["rating"],
                                            media_type: movieData["media_type"]}});
     App.movieRecommendationCreateModel.save();
+    App.friendListView.$el.html('');
   }
 });

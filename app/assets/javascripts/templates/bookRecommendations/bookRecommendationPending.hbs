@@ -1,15 +1,21 @@
-<div id="{{id}}">
-  <img src="{{cover_url}}"><br>
-  <span>{{title}}</span><br>
-  <span>{{author}}</span><br>
-  <span>{{year_published}}</span><br>
-  <span>{{plot_summary}}</span><br>
-  <span><a href="{{amazon_url}}">Get it on your Kindle!</a></span><br>
-  <span>Recommended By: {{recommendor_id}}</span><br>
-  <!-- {{#if this.message}} -->
-    <span>{{message}}</span><br>
-  <!-- {{/if}} -->
-  <span>{{created_at}}</span><br>
-  <button class="finished">Finished Rec!</button>
-  <button class="reject">Just Can't Do It</button>
+<div id="{{title}}">
+  <span class="close">Close</span><br>
+  <img class="show" src="{{cover_url}}"><br>
+  <div class="rec-details">
+    <span>{{title}}</span><br>
+    <span>Author: {{author}}</span><br>
+    <span>Year: {{year_published}}</span><br>
+  </div>
+  <div class="plot-summary">
+    <span>Plot Summary: {{plot_summary}}</span>
+  </div>
+  <div class="buttons">
+    <span><a href="{{amazon_purchase_link}}">Get it on your Kindle!</a></span>
+    <button class="finished">Finished Rec!</button>
+    <button class="reject">Just Can't Do It</button>
+  </div>
+  <div class="finish">
+    <span>Give it a rating!<input id="some_name" placeholder="Scale of 1-10"></span>
+    <button class="submit-finished">Finish!</button>
+  </div>
 </div>

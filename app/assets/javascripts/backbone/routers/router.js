@@ -100,11 +100,5 @@ App.Router = Backbone.Router.extend({
     App.Collections.friendRequests.fetch({reset: true});
   }
 
-  // cleanContainers: function(arrayOfContainerIds) {
-  //   for (var i = 0; i < arrayOfContainerIds.length; i++) {
-  //     $("#" + arrayOfContainerIds[i]).empty();
-  //   }
-  // }
-
 
 })
