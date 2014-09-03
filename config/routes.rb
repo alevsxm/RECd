@@ -5,12 +5,9 @@ Rails.application.routes.draw do
 
   resources :friendships, only: [:destroy]
 
-  resources :friend_requests, only: [:index, :create, :destroy] do
-    member do
-      post 'accept'
-      post 'reject'
-    end
-  end
+  resources :friend_requests, only: [:index, :create]
+  post 'friend_requests/accept' => 'friend_requests#accept', :as => "accept_friend_request"
+  delete 'friend_requests/reject' => 'friend_requests#reject', :as => "reject_friend_request"
 
   get 'book_recommendations/search'   =>  'book_recommendations#search', :as => :book_search
   resources :book_recommendations, only: [:index, :create]
@@ -20,5 +17,6 @@ Rails.application.routes.draw do
   resources :movie_recommendations, only: [:index, :create]
 
   get 'users/friends'  => 'users#friends', :as => :friends
+  get 'users/search' => 'users#search', :as => :friends_search
 
 end

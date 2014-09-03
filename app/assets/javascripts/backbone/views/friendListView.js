@@ -1,8 +1,8 @@
 App.FriendListView = Backbone.View.extend({
-  // el: '#search-results',  DO I SPECIFY AN EL HERE??
+  el: '#friends',
   initialize: function() {
-    console.log('New Friend List View')
-    this.listenTo(this.collection, 'reset', this.addAll)
+    console.log('New Friend List View');
+    this.listenTo(this.collection, 'reset', this.addAll);
   },
   addOne: function(friend) {
     var friendView = new App.FriendView({model: friend});
@@ -11,10 +11,9 @@ App.FriendListView = Backbone.View.extend({
     console.log(friendView.$el);
   },
   addAll: function() {
-    console.log('reset event');
     this.collection.each(function(friend) {
       this.addOne(friend);
-    }, this)
+    }, this);
   }
 
-})
+});

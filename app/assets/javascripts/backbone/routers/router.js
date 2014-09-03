@@ -1,10 +1,14 @@
 App.Router = Backbone.Router.extend({
   routes: {
     '': 'index',
-    'search/': 'search',
+    'search': 'search',
+    'friends': 'showFriends',
     'books/?=:searchTerm': 'bookSearchResults',
     'movies/?=:searchTerm': 'movieSearchResults',
-    'tv/?=:searchTerm': 'tvSearchResults'
+    'tv/?=:searchTerm': 'tvSearchResults',
+    'find-friends': 'friendSearch',
+    'find-friends/?=:searchTerm': 'friendSearchResults',
+    'friend-requests': 'showFriendRequests'
   },
   initialize: function() {
     console.log('New Router!');
@@ -24,7 +28,19 @@ App.Router = Backbone.Router.extend({
     App.Collections.movieRecommendations = new App.MovieRecommendationCollection();
     App.Views.movieRecommendationListView = new App.MovieRecommendationListView({collection: App.Collections.movieRecommendations});
 
+    App.Collections.friends = new App.FriendCollection();
+    App.Views.friendListView = new App.FriendListView({collection: App.Collections.friends});
+
+    App.Collections.potentialFriend = new App.PotentialFriendCollection();
+    App.Views.potentialFriendListView = new App.PotentialFriendListView({collection: App.Collections.potentialFriend});
+
+    App.Collections.friendRequests = new App.FriendRequestCollection();
+    App.Views.friendRequestListView = new App.FriendRequestListView({collection: App.Collections.friendRequests});
+
+
     App.Views.searchFormView = new App.SearchFormView({collection: App.Collections.bookRecommendationSearchResults});
+
+    App.Views.friendSearchFormView = new App.FriendSearchFormView({collection: App.Collections.potentialFriend});
   },
 
   index: function() {
@@ -34,6 +50,13 @@ App.Router = Backbone.Router.extend({
     $("div#movie-recommendations").show();
     App.Collections.bookRecommendations.fetch({reset: true});
     App.Collections.movieRecommendations.fetch({reset: true});
+  },
+
+  showFriends: function() {
+    console.log('Fired Friends!!!');
+    $("div#container").children().hide();
+    $("div#friends").show();
+    App.Collections.friends.fetch({reset: true});
   },
 
   search: function() {
@@ -57,7 +80,31 @@ App.Router = Backbone.Router.extend({
   tvSearchResults: function(searchTerm) {
     console.log('Looking for ' + searchTerm);
     App.Collections.tvRecommendationSearchResults.fetch({reset: true, data: {title: searchTerm}});
+  },
+
+  friendSearch: function() {
+    $("div#container").children().hide();
+    $("div#friend-search-input").show();
+    $("div#friend-search-results").show();
+  },
+
+  friendSearchResults: function(searchTerm) {
+    console.log('Looking for ' + searchTerm);
+    App.Collections.potentialFriend.fetch({reset: true, data: {first_name: searchTerm}});
+  },
+
+  showFriendRequests: function() {
+    console.log("Show me those friend requests!!");
+    $("div#container").children().hide();
+    $("div#friend-requests").show();
+    App.Collections.friendRequests.fetch({reset: true});
   }
+
+  // cleanContainers: function(arrayOfContainerIds) {
+  //   for (var i = 0; i < arrayOfContainerIds.length; i++) {
+  //     $("#" + arrayOfContainerIds[i]).empty();
+  //   }
+  // }
 
 
 })

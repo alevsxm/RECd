@@ -4,4 +4,4 @@ App.PotentialFriendCollection = Backbone.Collection.extend({
   initialize: function() {
     console.log('New Potential Friend Collection');
   }
-})
+});
