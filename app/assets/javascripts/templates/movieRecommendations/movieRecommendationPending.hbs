@@ -1,0 +1,23 @@
+<div id="{{title}}">
+  <span class="close">Close</span><br>
+  <img class="show" src="{{poster_url}}">
+  <div class="rec-details">
+    <span>{{title}}</span><br>
+    <span>Directed by: {{director}}</span><br>
+    <span>Cast: {{cast}}</span><br>
+    <span>Year: {{year_released}}</span><br>
+    <span>TMDB Rating: {{rating}}</span>
+  </div>
+  <div class="plot-summary">
+    <span>Plot Summary: {{plot_summary}}</span>
+  </div>
+  <div class="buttons">
+    <span><a href="http://www.canistream.it/search/{{media_type}}/{{title}}">Where Can I See It?</a></span>
+    <button class="finished">Finished Rec!</button>
+    <button class="reject">Just Can't Do It</button>
+  </div>
+  <div class="finish">
+    <span>Give it a rating!<input id="some_name" placeholder="Scale of 1-10"></span>
+    <button class="submit-finished">Finish!</button>
+  </div>
+</div>

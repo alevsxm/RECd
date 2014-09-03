@@ -1,5 +1,4 @@
 <div id="{{id}}">
-
   <img src="{{cover_url}}"><br>
   <span>{{title}}</span><br>
   <span>{{author}}</span><br>
@@ -8,7 +7,9 @@
   <span><a href="{{amazon_url}}">Get it on your Kindle!</a></span><br>
   <span>Recommended By: {{recommendor_id}}</span><br>
   <!-- {{#if this.message}} -->
-    <span>{{message}}</span>
+    <span>{{message}}</span><br>
   <!-- {{/if}} -->
-  <span>{{created_at}}</span>
+  <span>{{created_at}}</span><br>
+  <button class="finished">Finished Rec!</button>
+  <button class="reject">Just Can't Do It</button>
 </div>

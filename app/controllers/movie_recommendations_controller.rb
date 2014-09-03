@@ -4,7 +4,7 @@ class MovieRecommendationsController < ApplicationController
 
   def index
     @user = current_user
-    @movie_recommendations = @user.received_movie_recommendations
+    @movie_recommendations = @user.received_movie_recommendations.where(finished: false)
     render json: @movie_recommendations.to_json, status: 200
   end
 
@@ -24,6 +24,12 @@ class MovieRecommendationsController < ApplicationController
     @movie = params[:movie_recommendation]
     @movie[:recommendor_id] = current_user.id
     @movie = MovieRecommendation.create(movie_recommendation_params)
+    render json: @book.to_json, status: 200
+  end
+
+  def update
+    @movie = params[:movie_recommendation]
+    MovieRecommendation.update(@movie["id"], {finished: @movie["finished"], recommendee_rating: @movie["recommendee_rating"]})
     render json: @book.to_json, status: 200
   end
 
