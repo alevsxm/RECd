@@ -8,29 +8,39 @@
 </head>
 <body>
   <% if user_signed_in? %>
-    <h1>RECd</h1>
-    <% if current_user.image? %>
-    <img src="<%= current_user.image %>">
-    <% else %>
-    <img class="user-image" src="<%= current_user.avatar.url(:thumb) %>">
-    <% end %>
-  <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
-  <nav>
-    <ul>
-      <li><a href="">Home</a></li>
-      <li><a href="#search">REC'd Someone</a></li>
-      <li><a href="#friends">Friends</a></li>
-      <li><a href="#friend-requests">Friend Requests</a></li>
-      <li><a href="#find-friends">Find Friends</a></li>
-    </ul>
-  </nav>
+
+      <header>
+        <div id="header-container">
+        <div id="title-container">
+          <h1>RECd</h1>
+        </div>
+        <div id="nav-container">
+          <nav>
+            <ul>
+              <% if current_user.image? %>
+              <li><img src="<%= current_user.image %>"></li>
+              <% else %>
+              <li><img class="user-image" src="<%= current_user.avatar.url(:thumb) %>"></li>
+              <% end %>
+              <li><a href="">Home</a> |</li>
+              <li><a href="#search">REC'd Someone</a> |</li>
+              <li><a href="#friends">Friends</a> |</li>
+              <li><a href="#friend-requests">Friend Requests</a> |</li>
+              <li><a href="#find-friends">Find Friends</a> |</li>
+              <li><%= link_to 'Sign out', destroy_user_session_path, method: :delete %></li>
+            </ul>
+          </nav>
+        </div>
+        </div>
+    </header>
+
   <div id="container">
     <div id="rec-detail-modal"></div>
     <div id="friend-select-modal"></div>
     <div id="search-input"></div>
     <div id="search-results"></div>
-    <div id="book-recommendations"></div>
-    <div id="movie-recommendations"></div>
+    <div id="book-recommendations"><h3>My Book Recs</h3></div>
+    <div id="movie-recommendations"><h3>My Movie and Show Recs</h3></div>
     <div id="friends"></div>
     <div id="friend-requests"></div>
     <div id="friend-search-input"></div>
