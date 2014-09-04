@@ -25,11 +25,14 @@ App.FriendRequestView = Backbone.View.extend({
                                    user_id: friendshipData["user_id"],
                                    sender_id: friendshipData["sender_id"]}});
     App.friendshipCreateModel.save();
+    this.$el.html('');
+
   },
 
   deleteRequest: function() {
     console.log('NOOO your denying me??');
     this.model.reject();
+    this.$el.html('');
   }
 
 });

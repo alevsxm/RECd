@@ -18,5 +18,6 @@ App.PotentialFriendView = Backbone.View.extend({
     App.friendRequestCreateModel = new App.FriendCreateRequestModel();
     App.friendRequestCreateModel.set({friend_request: {user_id: userData["id"]}});
     App.friendRequestCreateModel.save();
+    this.$el.html('');
   }
 });

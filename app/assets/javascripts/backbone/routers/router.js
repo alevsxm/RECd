@@ -1,6 +1,7 @@
 App.Router = Backbone.Router.extend({
   routes: {
     '': 'index',
+    '_=_': 'index',
     'search': 'search',
     'friends': 'showFriends',
     'books/?=:searchTerm': 'bookSearchResults',
