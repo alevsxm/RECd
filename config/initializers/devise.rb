@@ -243,6 +243,8 @@ Devise.setup do |config|
   #   manager.default_strategies(scope: :user).unshift :some_external_strategy
   # end
 
+  config.secret_key = 'ceebb4981d786a7ad23221d5ab758c70352e963ce7b998df11de45648eac0052719482853c293a1bb846baa3ad5562be2e172e0e7235bc4ec170c0b666997aaf'
+
   config.omniauth :facebook, ENV['FACEBOOK_APP_ID'], ENV['FACEBOOK_SECRET']
 
   # ==> Mountable engine configurations
