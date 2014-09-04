@@ -21,12 +21,12 @@ Rails.application.configure do
 
 
   # General Settings
-  config.app_domain = 'http://fast-ravine-1207.herokuapp.com/'
+  config.app_domain = 'http://recd.herokuapp.com/'
 
   # Email
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = true
-  config.action_mailer.default_url_options = { host: 'http://fast-ravine-1207.herokuapp.com/' }
+  config.action_mailer.default_url_options = { host: 'http://recs.herokuapp.com/' }
   config.action_mailer.smtp_settings = {
     address: 'smtp.gmail.com',
     port: '587',
@@ -34,7 +34,7 @@ Rails.application.configure do
     user_name: ENV["GMAIL_USERNAME"],
     password: ENV["GMAIL_PASSWORD"],
     authentication: :plain,
-    domain: 'http://fast-ravine-1207.herokuapp.com/'
+    domain: 'http://recd.herokuapp.com/'
   }
 
 

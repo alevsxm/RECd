@@ -1,28 +1,21 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Welcome to RECd version 0.01!
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Ever talk to a friend or a colleague who recommends a movie or a book to you?  Sometimes
+you have no intention of following up on that recommendation, but sometimes you do, and RECd
+allows you to easily keep track of books and movie recommendations given to you.  Simply
+sign up to RECd either manually or through facebook, add other users as friends, and recieve,
+give, and rate movie and book recommendations to your hearts content.  You can also easily
+buy the kindle version of a book that has been recommended to you, as well as find out where
+any movie/show recommendation is streaming.  Enjoy!
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+RECd URL:
+http://recd.herokuapp.com/
+
+User Stories:
+https://trello.com/b/7chtQsBB/alex-levine-recd
+
+ERD
+https://www.lucidchart.com/invitations/accept/d7d869f2-aec2-4782-a0dd-fda7b8c715aa
