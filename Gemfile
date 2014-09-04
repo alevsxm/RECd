@@ -45,3 +45,7 @@ gem 'omniauth-facebook'
 gem 'paperclip'
 gem 'backbars'
 gem 'rails_12factor'
+
+gem 'bourbon'
+gem 'neat'
+gem 'bitters'

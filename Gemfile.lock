@@ -31,6 +31,13 @@ GEM
     backbars (0.0.5)
       handlebars_assets
     bcrypt (3.1.7)
+    bitters (0.10.0)
+      bourbon (>= 3.2)
+      sass (>= 3.2)
+      thor
+    bourbon (3.2.3)
+      sass (~> 3.2)
+      thor
     builder (3.2.2)
     climate_control (0.0.3)
       activesupport (>= 3.0)
@@ -82,6 +89,9 @@ GEM
     multi_json (1.10.1)
     multi_xml (0.5.5)
     multipart-post (2.0.0)
+    neat (1.5.1)
+      bourbon (>= 3.1)
+      sass (~> 3.2.19)
     oauth2 (1.0.0)
       faraday (>= 0.8, < 0.10)
       jwt (~> 1.0)
@@ -179,11 +189,14 @@ PLATFORMS
 
 DEPENDENCIES
   backbars
+  bitters
+  bourbon
   coffee-rails (~> 4.0.0)
   devise
   httparty
   jbuilder (~> 2.0)
   jquery-rails
+  neat
   omniauth-facebook
   paperclip
   pg

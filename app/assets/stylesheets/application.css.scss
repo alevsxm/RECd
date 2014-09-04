@@ -10,36 +10,54 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
  *= require_self
  */
 
-/*
+@import "reset";
+@import "bourbon";
+@import "base/base";
+@import "neat";
+
+
 body {
   background: #eee;
 }
 
 header {
-  background-color: black;
+  background: black;
   color: white;
   height: 75px;
 }
 
-h1 {
-  font-size: 70px;
+div#landing h1 {
+  font-size: 100px;
   font-family: courier;
   color: white;
 }
-a {
-  background: black;
-  color: white;
-  text-decoration: none;
-}
-#landing {
-  background-color: black;
-  color: white;
-}*/
 
+div#landing {
+  height: 1000px;
+  background: black;
+  text-align: center;
+}
+
+div#landing li a {
+  background-color: $base-button-color;
+  border-radius: $base-border-radius;
+  color: white;
+  display: inline-block;
+  font-size: $base-font-size;
+  font-weight: bold;
+  line-height: 1;
+  padding: .75em 1em;
+  text-decoration: none;
+  margin-bottom: 10px;
+
+  &:hover {
+    background-color: $hover-button-color;
+    color: white;
+  }
+}
 
 
 img.user-image {
