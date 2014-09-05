@@ -16,7 +16,6 @@ class FriendRequestsController < ApplicationController
 
   def accept
     @friend_request = params[:friend_request]
-    binding.pry
     Friendship.create(user_id: @friend_request["user_id"], friend_id: @friend_request["sender_id"])
     @friend_request_to_destroy = FriendRequest.find(@friend_request["id"])
     @friend_request_to_destroy.destroy

@@ -27,6 +27,11 @@ class BookRecommendationsController < ApplicationController
     render json: @book.to_json, status: 200
   end
 
+  def destroy
+    BookRecommendation.find(params[:id]).destroy
+    render json: @book.to_json, status: 200
+  end
+
   private
 
   def book_recommendation_params
