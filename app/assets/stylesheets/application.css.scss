@@ -48,8 +48,13 @@ header li a {
   color: white;
 }
 
+div#landing-content {
+  position: relative;
+  top: 20%;
+}
+
 div#landing h1 {
-  padding-top: 120px;
+  // padding-top: 120px;
   font-size: 100px;
   font-family: courier;
   color: white;
@@ -57,7 +62,7 @@ div#landing h1 {
 }
 
 div#landing {
-  height: 1000px;
+  height: 100vh;
   background: black;
   text-align: center;
 }
@@ -157,7 +162,7 @@ div#friend-search-input {
 
 div#friend-search-results {
   @include span-columns(6);
-  @include shift(3);
+  // @include shift(3);
 }
 
 div#search-input {
