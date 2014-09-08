@@ -1,6 +1,10 @@
 <div id="{{title}}">
-  <img class="thumbnail" src="{{cover_url}}">
-  <span>Title: {{title}}</span><br>
-  <span>Author: {{author}}</span><br>
-  <button id="recommend">"Recommend this book"</button>
+  {{#if this.author}}
+    <img class="thumbnail" src="{{cover_url}}">
+    <span>Title: {{title}}</span><br>
+    <span>Author: {{author}}</span><br>
+    <button id="recommend">"Recommend this book"</button>
+  {{else}}
+    <span>{{title}}</span>
+  {{/if}}
 </div>

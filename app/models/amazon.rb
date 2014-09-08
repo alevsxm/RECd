@@ -5,17 +5,23 @@ class Amazon
 
     search_results_array = []
 
-    amazon_results.each do |result_hash|
-      search_result_info = result_hash['ItemAttributes']
+    if amazon_results
+      amazon_results.each do |result_hash|
+        search_result_info = result_hash['ItemAttributes']
 
+        search_result = {}
+        search_result[:title] = search_result_info['Title']
+        search_result[:author] = search_result_info['Author']
+        search_result[:year_published] = search_result_info['PublicationDate']
+        search_result[:plot_summary] = result_hash['EditorialReviews'] ? (result_hash['EditorialReviews']['EditorialReview'].kind_of?(Array) ? result_hash['EditorialReviews']['EditorialReview'][0]['Content'] : result_hash['EditorialReviews']['EditorialReview']['Content']) : "No Summary Available"
+        search_result[:cover_url] = result_hash['LargeImage']['URL'] ? result_hash['LargeImage']['URL'] : "No Image"
+        search_result[:amazon_url] = result_hash['DetailPageURL']
+
+        search_results_array << search_result
+      end
+    else
       search_result = {}
-      search_result[:title] = search_result_info['Title']
-      search_result[:author] = search_result_info['Author']
-      search_result[:year_published] = search_result_info['PublicationDate']
-      search_result[:plot_summary] = result_hash['EditorialReviews']['EditorialReview'].kind_of?(Array) ? result_hash['EditorialReviews']['EditorialReview'][0]['Content'] : result_hash['EditorialReviews']['EditorialReview']['Content']
-      search_result[:cover_url] = result_hash['LargeImage']['URL']
-      search_result[:amazon_url] = result_hash['DetailPageURL']
-
+      search_result[:title] = "No Results Found"
       search_results_array << search_result
     end
 
