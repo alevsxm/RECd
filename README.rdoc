@@ -12,7 +12,7 @@ any movie/show recommendation is streaming.  Enjoy!
 
 
 RECd URL:
-http://recd.herokuapp.com/
+http://recd.herokuapp.com
 
 User Stories:
 https://trello.com/b/7chtQsBB/alex-levine-recd
