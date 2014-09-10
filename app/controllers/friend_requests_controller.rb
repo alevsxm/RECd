@@ -4,7 +4,7 @@ class FriendRequestsController < ApplicationController
 
   def index
     @friend_requests = current_user.friend_requests
-    render json: @friend_requests.to_json, status:200
+    render json: @friend_requests.as_json(include: :sender), status:200
   end
 
   def create
