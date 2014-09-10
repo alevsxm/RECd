@@ -1,5 +1,10 @@
 <div id="{{id}}">
-  <img class="thumbnail" src="{{poster_url}}">
-  <span>{{title}}</span><br>
-  <span>Recommended By: {{recommendor.first_name}} {{recommendor.last_name}}</span>
+  <div class="rec-thumbnail">
+    <img class="thumbnail" src="{{poster_url}}">
+  </div>
+  <div class="recommendation-content">
+    <span>{{title}}</span><br>
+    <span>Recommended By: {{recommendor.first_name}} {{recommendor.last_name}}</span><br>
+    <span class="media-type">Type: {{media_type}}</span>
+  </div>
 </div>

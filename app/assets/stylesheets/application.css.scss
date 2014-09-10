@@ -17,6 +17,8 @@
 @import "bourbon";
 @import "base/base";
 @import "neat";
+@import "search-results";
+@import "recommendations";
 
 body {
   background: #eee;
@@ -130,26 +132,6 @@ div#container{
   @include outer-container;
 }
 
-div#movie-recommendations{
-  display: none;
-  @include span-columns(5);
-  padding: 0 1em 0 1em;
-}
-
-div#book-recommendations{
-  margin-top: 1em;
-  display: none;
-  background: white;
-  @include span-columns(5);
-
-  h3{
-    background: #eee;
-    font-weight: bold;
-    text-align: center;
-    padding-bottom: 0.5em;
-  }
-}
-
 div#friends {
   @include span-columns(6);
   @include shift(3);
@@ -168,81 +150,4 @@ div#friend-search-input {
 div#friend-search-results {
   @include span-columns(6);
   // @include shift(3);
-}
-
-// Rec Search Results CSS
-
-div#search-input {
-  display: none;
-  @include span-columns(6);
-  @include shift(3);
-  margin-top: 20px;
-  text-align: center;
-  float: none;
-  margin-bottom: 1em;
-
-  input {
-    display: inline-block;
-    text-align: center;
-    width: 80%;
-  }
-}
-
-div#search-results {
-  @include span-columns(6);
-  @include shift(3);
-  background: white;
-  padding: 0 1em 0 1em;
-}
-
-div.book-recommendation-search-result{
-  @include span-columns(6 of 6);
-  border-bottom: 1px solid black;
-  margin: 1em 0 1em 0;
-  // padding-bottom: 1em;
-}
-
-div.movie-recommendation-search-result{
-  @include span-columns(6 of 6);
-  border-bottom: 1px solid black;
-  margin: 1em 0 1em 0;
-  // padding-bottom: 1em;
-}
-
-div.thumbnail {
-  @include span-columns(1 of 6);
-  margin-bottom: 1em;
-}
-
-div.search-result-content {
-  @include span-columns(5 of 6);
-  margin-bottom: 1em;
-}
-
-button#recommend {
-  font-size: 0.65em;
-}
-
-b {
-  font-weight: bold;
-}
-
-// Recommendation CSS
-
-div.book-recommendation{
-  @include span-columns(5 of 5);
-  border-bottom: 1px solid black;
-  padding: 1em 0 1em 0;
-  cursor: pointer;
-  // padding-bottom: 1em;
-}
-
-div.book-recommendation:hover{
-  background: #A8A8A8;
-  color: white;
-}
-
-div.rec-thumbnail {
-  @include span-columns(1 of 5);
-  // padding-left: 1em;
 }

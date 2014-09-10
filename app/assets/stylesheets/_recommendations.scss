@@ -1,0 +1,66 @@
+div#movie-recommendations{
+  margin-top: 1em;
+  display: none;
+  background: white;
+  @include span-columns(5);
+
+  h3{
+    background: #eee;
+    font-weight: bold;
+    text-align: center;
+    padding-bottom: 0.5em;
+  }
+}
+
+div#book-recommendations{
+  margin-top: 1em;
+  display: none;
+  background: white;
+  @include span-columns(5);
+
+  h3{
+    background: #eee;
+    font-weight: bold;
+    text-align: center;
+    padding-bottom: 0.5em;
+  }
+}
+
+div.book-recommendation{
+  @include span-columns(5 of 5);
+  border-bottom: 1px solid black;
+  padding: 1em 0 1em 1em;
+  cursor: pointer;
+  // padding-bottom: 1em;
+}
+
+div.movie-recommendation{
+  @include span-columns(5 of 5);
+  border-bottom: 1px solid black;
+  padding: 1em 0 1em 1em;
+  cursor: pointer;
+  // padding-bottom: 1em;
+}
+
+div.book-recommendation:hover{
+  background: #A8A8A8;
+  color: white;
+}
+
+div.movie-recommendation:hover{
+  background: #A8A8A8;
+  color: white;
+}
+
+div.rec-thumbnail {
+  @include span-columns(1 of 5);
+  // padding-left: 1em;
+}
+
+div.recommendation-content {
+  @include span-columns(4 of 5);
+}
+
+span.media-type {
+  text-transform: capitalize;
+}
