@@ -1,5 +1,9 @@
 <div id="{{id}}">
-  <img class="thumbnail" src="{{cover_url}}">
-  <span>{{title}}</span><br>
-  <span>Recommended By: {{recommendor.first_name}} {{recommendor.last_name}}</span>
+  <div class="rec-thumbnail">
+    <img class="thumbnail" src="{{cover_url}}">
+  </div>
+  <div class="recommendation-content">
+    <span>{{title}}</span><br>
+    <span>Recommended By: {{recommendor.first_name}} {{recommendor.last_name}}</span>
+  </div>
 </div>

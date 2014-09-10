@@ -1,9 +1,13 @@
 <div id="{{title}}">
   {{#if this.author}}
-    <img class="thumbnail" src="{{cover_url}}">
-    <span>Title: {{title}}</span><br>
-    <span>Author: {{author}}</span><br>
-    <button id="recommend">"Recommend this book"</button>
+    <div class="thumbnail">
+      <img class="thumbnail" src="{{cover_url}}">
+    </div>
+    <div class="search-result-content">
+      <span><b>Title:</b> {{title}}</span><br>
+      <span><b>Author:</b> {{author}}</span><br>
+      <button id="recommend">"Recommend this book"</button>
+    </div>
   {{else}}
     <span>{{title}}</span>
   {{/if}}
