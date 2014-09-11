@@ -144,6 +144,8 @@ div#friend-requests{
   text-align: center;
   float: none;
   margin-bottom: 1em;
+  // background: white;
+  // padding: 0 1em 0 1em;
 
   h3 {
     // background: black;
@@ -159,6 +161,12 @@ div#friend-requests{
   img {
     vertical-align: bottom;
   }
+}
+
+div.friend-request{
+  @include span-columns(6 of 6);
+  // border-bottom: 1px solid black;
+  margin: 1em 0 1em 0;
 }
 
 span.thumbnail {
