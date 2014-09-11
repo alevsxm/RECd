@@ -15,9 +15,12 @@ App.BookRecommendationSearchResultView = Backbone.View.extend({
   },
   recommendBook: function(){
     App.Collections.friends = new App.FriendCollection();
-    App.friendListView = new App.FriendListView({collection: App.Collections.friends});
+    App.friendListModalView = new App.FriendListModalView({collection: App.Collections.friends});
+    console.log("New Friend List MMModal!");
     App.Collections.friends.fetch({reset: true});
-    this.$el.append(App.friendListView.$el.show());
+    // this.$el.append(App.friendListView.$el.show());
+    $('#modal').show();
+    App.friendListModalView.$el.show();
 
   },
   recommendationRequest: function(ev){
@@ -33,6 +36,6 @@ App.BookRecommendationSearchResultView = Backbone.View.extend({
                                            cover_url: bookData["cover_url"],
                                            amazon_purchase_link: bookData["amazon_url"]}});
     App.bookRecommendationCreateModel.save();
-    App.friendListView.$el.html('');
+    App.friendListModalView.$el.html('').hide();
   }
 })
