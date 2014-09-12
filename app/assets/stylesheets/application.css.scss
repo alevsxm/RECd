@@ -209,7 +209,7 @@ div#friend-search-results {
 #friend-search-modal  {
     display: none; /* ensures it’s invisible until it’s called */
     overflow: scroll;
-    position: absolute; /* makes the div go into a position that’s absolute to the browser viewing area */
+    position: fixed; /* makes the div go into a position that’s absolute to the browser viewing area */
     left: 25%; /* positions the div half way horizontally */
     top: 25%; /* positions the div half way vertically */
     padding: 25px;
@@ -223,7 +223,7 @@ div#friend-search-results {
 #rec-detail-modal  {
     display: none; /* ensures it’s invisible until it’s called */
     overflow: scroll;
-    position: fixed; /* makes the div go into a position that’s absolute to the browser viewing area */
+    position: absolute; /* makes the div go into a position that’s absolute to the browser viewing area */
     left: 25%; /* positions the div half way horizontally */
     top: 25%; /* positions the div half way vertically */
     padding: 25px;

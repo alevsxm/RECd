@@ -7,7 +7,8 @@ App.BookRecommendationSearchResultView = Backbone.View.extend({
   },
   events: {
     'click button#recommend': 'recommendBook',
-    'click button.select-friend': 'recommendationRequest'
+    'click button.select-friend': 'recommendationRequest',
+    'click button.close': 'closeModal'
   },
   template: HandlebarsTemplates['bookRecommendations/bookRecommendationSearchResult'],
   render: function(){
@@ -37,5 +38,9 @@ App.BookRecommendationSearchResultView = Backbone.View.extend({
                                            amazon_purchase_link: bookData["amazon_url"]}});
     App.bookRecommendationCreateModel.save();
     App.friendListModalView.$el.html('').hide();
+  },
+
+  closeModal: function(){
+    App.friendListModalView.$el.hide();
   }
 })
