@@ -1,5 +1,5 @@
 App.FriendListModalView = Backbone.View.extend({
-  el: '#friend-search-modal',
+  el: '.friend-search-modal',
   initialize: function() {
     console.log('New Friend List Modal View');
     this.listenTo(this.collection, 'reset', this.addAll);

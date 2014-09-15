@@ -56,6 +56,7 @@ App.Router = Backbone.Router.extend({
   showFriends: function() {
     console.log('Fired Friends!!!');
     $("div#container").children().hide();
+    $("div#friend-requests").html('');
     $("div#friends").show();
     App.Collections.friends.fetch({reset: true});
   },
@@ -63,28 +64,41 @@ App.Router = Backbone.Router.extend({
   search: function() {
     console.log('Fired Search!');
     $("div#container").children().hide();
+    $("div#friends").html('');
+    $("div#friend-requests").html('');
     $("div#search-input").show();
     $("div#search-results").show();
   },
 
   bookSearchResults: function(searchTerm) {
+    $("div#container").children().hide();
+    $("div#search-input").show();
+    $("div#search-results").html('').show();
     console.log('Looking for ' + searchTerm);
-    // App.Collections.bookRecommendationSearchResults.reset();
     App.Collections.bookRecommendationSearchResults.fetch({reset: true, data: {title: searchTerm}});
   },
 
   movieSearchResults: function(searchTerm) {
+    $("div#container").children().hide();
+    $("div#search-input").show();
+    $("div#search-results").html('').show();
     console.log('Looking for ' + searchTerm);
     App.Collections.movieRecommendationSearchResults.fetch({reset: true, data: {title: searchTerm}});
   },
 
   tvSearchResults: function(searchTerm) {
+    $("div#container").children().hide();
+    $("div#search-input").show();
+    $("div#search-results").html('').show();
     console.log('Looking for ' + searchTerm);
     App.Collections.tvRecommendationSearchResults.fetch({reset: true, data: {title: searchTerm}});
   },
 
   friendSearch: function() {
+    console.log('Find Friends!');
     $("div#container").children().hide();
+    $("div#friends").html('');
+    $("div#friend-requests").html('');
     $("div#friend-search-input").show();
     $("div#friend-search-results").show();
   },
@@ -97,9 +111,10 @@ App.Router = Backbone.Router.extend({
   showFriendRequests: function() {
     console.log("Show me those friend requests!!");
     $("div#container").children().hide();
+    $("div#friends").html('');
     $("div#friend-requests").show();
     App.Collections.friendRequests.fetch({reset: true});
   }
 
 
-})
+});
