@@ -7,21 +7,22 @@ App.TvRecommendationSearchResultView = Backbone.View.extend({
   },
   events: {
     'click button#recommend': 'recommendMovie',
-    'click button.select-friend': 'recommendationRequest'
+    'click button.select-friend': 'recommendationRequest',
+    'click button.close': 'closeModal'
   },
+
   template: HandlebarsTemplates['movieRecommendations/movieRecommendationSearchResult'],
   render: function(){
     this.$el.html(this.template(this.model.toJSON()));
   },
-  recommendMovie: function(){
-    if (!App.friendListView) {
-      App.Collections.friends = new App.FriendCollection();
-      App.friendListView = new App.FriendListView({collection: App.Collections.friends});
-      App.Collections.friends.fetch({reset: true});
-      this.$el.append(App.friendListView.$el.show());
-    }
 
+  recommendMovie: function(ev){
+    App.Collections.friends = new App.FriendCollection();
+    App.friendListModalView = new App.FriendListModalView({collection: App.Collections.friends});
+    App.Collections.friends.fetch({reset: true});
+    $(ev.target).parent().parent().find('.friend-search-modal').show();
   },
+
   recommendationRequest: function(ev){
     var id = $(ev.target).parent().attr('data-id');
     var movieData = this.model.toJSON();
@@ -37,7 +38,12 @@ App.TvRecommendationSearchResultView = Backbone.View.extend({
                                            rating: movieData["rating"],
                                            media_type: movieData["media_type"]}});
     App.movieRecommendationCreateModel.save();
-    App.friendListView.$el.html('');
-    App.friendListView = undefined;
+    App.friendListModalView.$el.html('').hide();
+    // App.friendListView = undefined;
+  },
+
+  closeModal: function(){
+    App.friendListModalView.$el.hide();
+    App.friendListModalView.$el.find('.friend').remove();
   }
 });

@@ -7,8 +7,6 @@ App.FriendListView = Backbone.View.extend({
   addOne: function(friend) {
     var friendView = new App.FriendView({model: friend});
     this.$el.append(friendView.$el);
-    console.log(this.$el);
-    console.log(friendView.$el);
   },
   addAll: function() {
     this.collection.each(function(friend) {

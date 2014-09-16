@@ -1,0 +1,31 @@
+div#friend-requests{
+  @include span-columns(6);
+  @include shift(3);
+  margin-top: 20px;
+  text-align: center;
+  float: none;
+  margin-bottom: 1em;
+  // background: white;
+  // padding: 0 1em 0 1em;
+
+  h3 {
+    // background: black;
+    // color: white;
+    text-align: center;
+  }
+
+  button {
+    font-size: 0.65em;
+    vertical-align: bottom;
+  }
+
+  img {
+    vertical-align: bottom;
+  }
+}
+
+div.friend-request{
+  @include span-columns(6 of 6);
+  // border-bottom: 1px solid black;
+  margin: 1em 0 1em 0;
+}

@@ -5,10 +5,8 @@ App.FriendListModalView = Backbone.View.extend({
     this.listenTo(this.collection, 'reset', this.addAll);
   },
   addOne: function(friend) {
-    var friendView = new App.FriendView({model: friend});
-    this.$el.append(friendView.$el);
-    console.log(this.$el);
-    console.log(friendView.$el);
+    var friendRecSelectView = new App.FriendRecSelectView({model: friend});
+    this.$el.append(friendRecSelectView.$el);
   },
   addAll: function() {
     this.collection.each(function(friend) {

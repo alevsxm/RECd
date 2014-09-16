@@ -56,7 +56,7 @@ App.Router = Backbone.Router.extend({
   showFriends: function() {
     console.log('Fired Friends!!!');
     $("div#container").children().hide();
-    $("div#friend-requests").html('');
+    $("div#friend-requests").find(('.friend-request')).remove();
     $("div#friends").show();
     App.Collections.friends.fetch({reset: true});
   },
@@ -64,8 +64,8 @@ App.Router = Backbone.Router.extend({
   search: function() {
     console.log('Fired Search!');
     $("div#container").children().hide();
-    $("div#friends").html('');
-    $("div#friend-requests").html('');
+    $("div#friends").find(('.friend')).remove();
+    $("div#friend-requests").find(('.friend-request')).remove();
     $("div#search-input").show();
     $("div#search-results").show();
   },
@@ -97,8 +97,8 @@ App.Router = Backbone.Router.extend({
   friendSearch: function() {
     console.log('Find Friends!');
     $("div#container").children().hide();
-    $("div#friends").html('');
-    $("div#friend-requests").html('');
+    $("div#friends").find(('.friend')).remove();
+    $("div#friend-requests").find(('.friend-request')).remove();
     $("div#friend-search-input").show();
     $("div#friend-search-results").show();
   },
@@ -111,7 +111,7 @@ App.Router = Backbone.Router.extend({
   showFriendRequests: function() {
     console.log("Show me those friend requests!!");
     $("div#container").children().hide();
-    $("div#friends").html('');
+    $("div#friends").find(('.friend')).remove();
     $("div#friend-requests").show();
     App.Collections.friendRequests.fetch({reset: true});
   }

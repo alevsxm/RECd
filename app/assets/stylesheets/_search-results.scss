@@ -23,14 +23,21 @@ div#search-results {
 
 div.book-recommendation-search-result{
   @include span-columns(6 of 6);
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid gray;
+  margin: 1em 0 1em 0;
+  // padding-bottom: 1em;
+}
+
+div.tv-recommendation-search-result{
+  @include span-columns(6 of 6);
+  border-bottom: 1px solid gray;
   margin: 1em 0 1em 0;
   // padding-bottom: 1em;
 }
 
 div.movie-recommendation-search-result{
   @include span-columns(6 of 6);
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid gray;
   margin: 1em 0 1em 0;
   // padding-bottom: 1em;
 }

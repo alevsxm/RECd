@@ -20,7 +20,6 @@ App.BookRecommendationSearchResultView = Backbone.View.extend({
     console.log("New Friend List MMModal!");
     App.Collections.friends.fetch({reset: true});
     $(ev.target).parent().parent().find('.friend-search-modal').show();
-    // App.friendListModalView.$el.show();
 
   },
   recommendationRequest: function(ev){
@@ -41,6 +40,6 @@ App.BookRecommendationSearchResultView = Backbone.View.extend({
 
   closeModal: function(){
     App.friendListModalView.$el.hide();
-    // $('#friend-search-modal').html('');
+    App.friendListModalView.$el.find('.friend').remove();
   }
-})
+});
