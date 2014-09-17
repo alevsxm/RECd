@@ -135,15 +135,6 @@ span.thumbnail {
   margin-bottom: 1em;
 }
 
-div#friend-search-input {
-  @include span-columns(6);
-  @include shift(3);
-}
-
-div#friend-search-results {
-  @include span-columns(6);
-  // @include shift(3);
-}
 
 .friend-search-modal  {
   display: none; /* ensures it’s invisible until it’s called */

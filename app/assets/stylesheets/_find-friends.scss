@@ -10,13 +10,42 @@ div#friend-search-input {
   input {
     display: inline-block;
     text-align: center;
-    width: 80%;
+    width: 70%;
+  }
+
+  button {
+    width: 65%;
   }
 }
 
 div#friend-search-results {
   @include span-columns(6);
   @include shift(3);
-  background: white;
-  padding: 0 1em 0 1em;
+  // background: white;
+  // padding: 0 1em 0 1em;
+  margin-top: 20px;
+  text-align: center;
+  float: none;
+  margin-bottom: 1em;
+
+  h3 {
+    // background: black;
+    // color: white;
+    text-align: center;
+  }
+
+  button {
+    font-size: 0.65em;
+    vertical-align: bottom;
+  }
+
+  img {
+    vertical-align: bottom;
+  }
+}
+
+div.recd-user{
+  @include span-columns(6 of 6);
+  margin: 1em 0 1em 0;
+  // border-bottom: 1px solid gray;
 }
