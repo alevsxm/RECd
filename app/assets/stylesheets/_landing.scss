@@ -1,0 +1,55 @@
+div#landing-content {
+  position: relative;
+  top: 20%;
+}
+
+div#landing h1 {
+  // padding-top: 120px;
+  font-size: 130px;
+  font-family: courier;
+  color: white;
+  margin-bottom: 30px;
+}
+
+div#welcome {
+  position: absolute;
+  left: 46%;
+  top: 18px;
+  color: white;
+  font-weight: bold;
+}
+
+div#caption {
+  position: absolute;
+  left: 29%;
+  top: 126px;
+  color: white;
+  width: 35%;
+  // font-weight: bold;
+}
+
+div#landing {
+  height: 100vh;
+  background: black;
+  text-align: center;
+  background-image: url("camaras.jpg");
+  background-size: cover;
+}
+
+div#landing li a {
+  background-color: $base-button-color;
+  border-radius: $base-border-radius;
+  color: white;
+  display: inline-block;
+  font-size: 0.8em;
+  font-weight: bold;
+  line-height: 1;
+  padding: .75em 1em;
+  text-decoration: none;
+  margin-bottom: 15px;
+
+  &:hover {
+    background-color: $hover-button-color;
+    color: white;
+  }
+}
