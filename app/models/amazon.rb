@@ -14,7 +14,7 @@ class Amazon
         search_result[:author] = search_result_info['Author']
         search_result[:year_published] = search_result_info['PublicationDate']
         search_result[:plot_summary] = result_hash['EditorialReviews'] ? (result_hash['EditorialReviews']['EditorialReview'].kind_of?(Array) ? result_hash['EditorialReviews']['EditorialReview'][0]['Content'].gsub(/<\/?[^>]+>/, '') : result_hash['EditorialReviews']['EditorialReview']['Content'].gsub(/<\/?[^>]+>/, '')) : "No Summary Available"
-        search_result[:cover_url] = result_hash['LargeImage']['URL'] ? result_hash['LargeImage']['URL'] : "No Image"
+        search_result[:cover_url] = result_hash['LargeImage'] ? (result_hash['LargeImage']['URL'] ? result_hash['LargeImage']['URL'] : "No Image") : "No Image"
         search_result[:amazon_url] = result_hash['DetailPageURL']
 
         search_results_array << search_result
