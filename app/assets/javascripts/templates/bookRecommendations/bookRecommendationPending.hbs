@@ -1,13 +1,15 @@
 <div id="{{title}}">
-  <span class="close">Close</span><br>
-  <img class="show" src="{{cover_url}}"><br>
+  <button class="close">Close</button><br>
+  <div class="image">
+    <img class="show" src="{{cover_url}}"><br>
+  </div>
   <div class="rec-details">
-    <span>{{title}}</span><br>
-    <span>Author: {{author}}</span><br>
-    <span>Year: {{year_published}}</span><br>
+    <span class="title"><u><b>{{title}}</b></u></span><br>
+    <span><b>Author:</b> {{author}}</span><br>
+    <span><b>Year:</b> {{year_published}}</span><br>
   </div>
   <div class="plot-summary">
-    <span>Plot Summary: {{plot_summary}}</span>
+    <span><b>Plot Summary:</b> {{plot_summary}}</span>
   </div>
   <div class="buttons">
     <span><a href="{{amazon_purchase_link}}" target="_blank">Get it on your Kindle!</a></span>

@@ -11,7 +11,7 @@ App.BookRecommendationDetailView = Backbone.View.extend({
     'click button.finished': 'showRating',
     'click button.submit-finished': 'completeRec',
     'click button.reject': 'deleteRec',
-    'click span.close': 'closeModal'
+    'click button.close': 'closeModal'
   },
 
   template: HandlebarsTemplates['bookRecommendations/bookRecommendationPending'],

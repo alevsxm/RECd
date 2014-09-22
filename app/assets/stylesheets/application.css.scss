@@ -147,6 +147,66 @@ span.thumbnail {
   background-color: #ffffff;
   width: 50%;
   z-index: 100; /* makes the div the top layer, so it’ll lay on top of the other content */
+
+  button {
+    font-size: 0.65em;
+  }
+
+  button.close {
+    background-color: red;
+    display: block;
+    float: right;
+  }
+
+  button.close:hover {
+    background-color: darkred;
+  }
+
+  span.title {
+    font-size: 20px;
+  }
+
+  div.image {
+    display: inline;
+    float: left;
+    padding-right: 7px;
+  }
+
+  div.plot-summary {
+    padding-bottom: 8px;
+  }
+
+  div.buttons {
+    text-align: center;
+    margin-bottom: 15px;
+  }
+
+  a {
+    background-color: $base-button-color;
+    border-radius: $base-border-radius;
+    color: white;
+    display: inline-block;
+    font-size: 0.65em;
+    font-weight: bold;
+    line-height: 1;
+    padding: .75em 1em;
+    text-decoration: none;
+
+    &:hover {
+      background-color: $hover-button-color;
+      color: white;
+    }
+  }
+
+  div.finish {
+    text-align: center;
+    margin-bottom: 5px;
+
+    input {
+      display: inline;
+      margin-left: 3px;
+    }
+  }
 }
 
 #sign-in-modal {
