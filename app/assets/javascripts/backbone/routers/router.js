@@ -107,9 +107,10 @@ App.Router = Backbone.Router.extend({
   friendSearchResults: function(searchTerm) {
     console.log('Looking for ' + searchTerm);
     $("div#container").children().hide();
+    $("div#friend-search-results").find(('.recd-user')).remove();
     $("div#friend-search-input").show();
     $("div#friend-search-results").show();
-    App.Collections.potentialFriend.fetch({reset: true, data: {first_name: searchTerm}});
+    App.Collections.potentialFriend.fetch({reset: true, data: {name_search: searchTerm}});
   },
 
   showFriendRequests: function() {
