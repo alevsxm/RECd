@@ -17,10 +17,12 @@ App.MovieRecommendationModel = Backbone.Model.extend({
   },
 
   reject: function() {
-    $.ajax({
-      type: "DELETE",
-      url: "movie_recommendations",
-      data: {id: this.get("id")}
-    });
+    this.destroy();
+
+    // $.ajax({
+    //   type: "DELETE",
+    //   url: "movie_recommendations",
+    //   data: {id: this.get("id")}
+    // });
   }
 });

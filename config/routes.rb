@@ -11,13 +11,13 @@ Rails.application.routes.draw do
 
   get 'book_recommendations/search'   =>  'book_recommendations#search', :as => :book_search
   put 'book_recommendations' => 'book_recommendations#update'
-  delete 'book_recommendations' => 'book_recommendations#destroy'
+  delete 'book_recommendations/:id' => 'book_recommendations#destroy'
   resources :book_recommendations, only: [:index, :create]
 
   get 'movie_recommendations/movie_search'   =>  'movie_recommendations#movie_search', :as => :movie_search
   get 'movie_recommendations/tv_search'   =>  'movie_recommendations#tv_search', :as => :tv_search
   put 'movie_recommendations' => 'movie_recommendations#update'
-  delete 'movie_recommendations' => 'movie_recommendations#destroy'
+  delete 'movie_recommendations/:id' => 'movie_recommendations#destroy'
   resources :movie_recommendations, only: [:index, :create]
 
   get 'users/friends'  => 'users#friends', :as => :friends

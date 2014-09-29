@@ -7,8 +7,6 @@ App.MovieRecommendationListView = Backbone.View.extend({
   addOne: function(movieRecommendation) {
     var movieRecommendationView = new App.MovieRecommendationView({model: movieRecommendation});
     this.$el.append(movieRecommendationView.$el);
-    console.log(this.$el);
-    console.log(movieRecommendationView.$el);
   },
   addAll: function() {
     this.collection.each(function(movieRecommendation) {

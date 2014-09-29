@@ -17,11 +17,13 @@ App.BookRecommendationModel = Backbone.Model.extend({
   },
 
   reject: function() {
-    $.ajax({
-      type: "DELETE",
-      url: "book_recommendations",
-      data: {id: this.get("id")}
-    });
+    this.destroy();
+
+    // $.ajax({
+    //   type: "DELETE",
+    //   url: "book_recommendations",
+    //   data: {id: this.get("id")}
+    // });
   }
 
 });
