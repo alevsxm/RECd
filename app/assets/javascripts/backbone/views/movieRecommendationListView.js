@@ -9,8 +9,13 @@ App.MovieRecommendationListView = Backbone.View.extend({
     this.$el.append(movieRecommendationView.$el);
   },
   addAll: function() {
-    this.collection.each(function(movieRecommendation) {
-      this.addOne(movieRecommendation);
-    }, this);
+    if (this.collection.length > 0) {
+      this.collection.each(function(movieRecommendation) {
+        this.addOne(movieRecommendation);
+      }, this);
+    } else {
+      var noMovieRecommendationView = new App.NoMovieRecommendationView();
+      this.$el.append(noMovieRecommendationView.$el);
+    }
   }
 });

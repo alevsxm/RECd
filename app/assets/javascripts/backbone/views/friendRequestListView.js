@@ -11,9 +11,14 @@ App.FriendRequestListView = Backbone.View.extend({
     console.log(friendRequestView.$el);
   },
   addAll: function() {
-    this.collection.each(function(friendRequest) {
-      this.addOne(friendRequest);
-    }, this);
+    if (this.collection.length > 0) {
+      this.collection.each(function(friendRequest) {
+        this.addOne(friendRequest);
+      }, this);
+    } else {
+      var noFriendRequestView = new App.NoFriendRequestView();
+      this.$el.append(noFriendRequestView.$el);
+    }
   }
 
 });
