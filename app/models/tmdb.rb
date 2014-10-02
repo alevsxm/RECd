@@ -61,7 +61,9 @@ class TMDB
     tmdb_response["cast"].each do |cast_member|
       cast_member_names << cast_member["name"]
     end
-    cast_member_names
+    if cast_member_names.any?
+      cast_member_names = cast_member_names.join(', ')
+    end
   end
 
 
@@ -79,6 +81,9 @@ class TMDB
     end
     tmdb_response["cast"].take(5).each do |cast_member|
       cast << cast_member["name"]
+    end
+    if cast.any?
+      cast = cast.join(', ')
     end
     director_and_cast << cast
   end

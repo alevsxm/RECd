@@ -32,7 +32,7 @@ App.MovieRecommendationSearchResultView = Backbone.View.extend({
                                            recommendee_id: id,
                                            title: movieData["title"],
                                            director: movieData["director"],
-                                           cast: movieData["cast"].join(', '),
+                                           cast: movieData["cast"],
                                            year_released: movieData["year_released"],
                                            plot_summary: movieData["plot_summary"],
                                            poster_url: movieData["poster_url"],
