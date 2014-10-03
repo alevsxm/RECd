@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <p>Hi <%= @user.first_name %></p>
+    <p>
+      <% if @sender.image? %>
+      <img src="<%= @sender.image %>">
+      <% else %>
+      <img class="user-image" src="<%= @sender.avatar.url(:thumb) %>">
+      <% end %>
+       <%= @sender.first_name %> sent you a REC!
+    </p>
+    <p>
+      <%= @movie_recommendation.title %>
+    </p>
+    <p><img style="max-height:200px;" src="<%= @movie_recommendation.poster_url %>"></p>
+    <p>Check out your <a href="www.recd.co">RECs</a> to get more info.</p>
+  </body>
+</html>

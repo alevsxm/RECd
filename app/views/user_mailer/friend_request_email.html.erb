@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <p>Hi <%= @user.first_name %></p>
+    <p>
+      <%= @sender.first_name %> wants to be friends on RECd!
+    </p>
+    <p>
+      <% if @sender.image? %>
+      <img src="<%= @sender.image %>">
+      <% else %>
+      <img class="user-image" src="<%= @sender.avatar.url(:thumb) %>">
+      <% end %>
+    </p>
+    <p>If you accept, <%= @sender.first_name %> will be able to send you RECs.</p>
+  </body>
+</html>

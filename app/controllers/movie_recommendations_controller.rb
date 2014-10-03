@@ -24,18 +24,21 @@ class MovieRecommendationsController < ApplicationController
     @movie = params[:movie_recommendation]
     @movie[:recommendor_id] = current_user.id
     @movie = MovieRecommendation.create(movie_recommendation_params)
-    render json: @book.to_json, status: 200
+    @user = User.find(@movie.recommendee_id)
+    @sender = User.find(@movie.recommendor_id)
+    UserMailer.new_movie_recommendation_email(@user, @sender, @movie).deliver
+    render json: @movie.to_json, status: 200
   end
 
   def update
     @movie = params[:movie_recommendation]
     MovieRecommendation.update(@movie["id"], {finished: @movie["finished"], recommendee_rating: @movie["recommendee_rating"]})
-    render json: @book.to_json, status: 200
+    render json: @movie.to_json, status: 200
   end
 
   def destroy
     MovieRecommendation.find(params[:id]).destroy
-    render json: @book.to_json, status: 200
+    render json: @movie.to_json, status: 200
   end
 
   private

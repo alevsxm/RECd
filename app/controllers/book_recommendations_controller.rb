@@ -18,6 +18,9 @@ class BookRecommendationsController < ApplicationController
     @book = params[:book_recommendation]
     @book[:recommendor_id] = current_user.id
     @book = BookRecommendation.create(book_recommendation_params)
+    @user = User.find(@book.recommendee_id)
+    @sender = User.find(@book.recommendor_id)
+    UserMailer.new_book_recommendation_email(@user, @sender, @book).deliver
     render json: @book.to_json, status: 200
   end
 

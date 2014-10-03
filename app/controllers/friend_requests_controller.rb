@@ -11,6 +11,8 @@ class FriendRequestsController < ApplicationController
     @friend_request = params[:friend_request]
     @friend_request[:sender_id] = current_user.id
     @friend_request = FriendRequest.create(friend_request_params)
+    @user = User.find(@friend_request.user_id)
+    UserMailer.friend_request_email(@user).deliver
     render json: @results.to_json, status: 200
   end
 
