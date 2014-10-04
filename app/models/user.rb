@@ -52,4 +52,13 @@ class User < ActiveRecord::Base
     end
   end
 
+  #Calculates the average rating of a users movie recommendations
+  def avg_rating
+    movie_recs = self.given_movie_recommendations
+    book_recs = self.given_book_recommendations
+    ratings = (movie_recs + book_recs).map(&:recommendee_rating).compact
+    return 0 if ratings.empty?
+    (ratings.sum.to_f / ratings.size.to_f).round(1)
+  end
+
 end

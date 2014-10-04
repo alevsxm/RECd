@@ -4,17 +4,17 @@ App.BookRecommendationModel = Backbone.Model.extend({
   },
   urlRoot: '/book_recommendations',
 
-  complete: function() {
-    $.ajax({
-      type: "PUT",
-      url: "book_recommendations",
-      data: {book_recommendation: {
-        finished: true,
-        recommendee_rating: this.get("recommendee_rating"),
-        id: this.get("id")
-      }}
-    });
-  },
+  // complete: function() {
+  //   $.ajax({
+  //     type: "PUT",
+  //     url: "book_recommendations",
+  //     data: {book_recommendation: {
+  //       finished: true,
+  //       recommendee_rating: this.get("recommendee_rating"),
+  //       id: this.get("id")
+  //     }}
+  //   });
+  // },
 
   reject: function() {
     this.destroy();

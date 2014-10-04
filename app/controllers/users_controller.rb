@@ -4,7 +4,7 @@ class UsersController < ApplicationController
 
   def friends
     @friends = current_user.friends
-    render json: @friends.to_json, status: 200
+    render json: @friends.to_json(methods: :avg_rating), status: 200
   end
 
   def search

@@ -26,8 +26,10 @@ App.MovieRecommendationDetailView = Backbone.View.extend({
 
   completeRec: function() {
     console.log('finishing yo!');
-    this.model.set({recommendee_rating: this.$el.find('input').val()});
-    this.model.complete();
+    this.model.set({recommendee_rating: this.$el.find('input').val(),
+                    finished: true});
+    this.model.save();
+    // this.model.complete();
     this.$el.hide();
   },
 

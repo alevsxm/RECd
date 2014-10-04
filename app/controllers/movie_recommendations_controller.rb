@@ -32,7 +32,8 @@ class MovieRecommendationsController < ApplicationController
 
   def update
     @movie = params[:movie_recommendation]
-    MovieRecommendation.update(@movie["id"], {finished: @movie["finished"], recommendee_rating: @movie["recommendee_rating"]})
+    @movie_recommendation = MovieRecommendation.find(@movie["id"])
+    @movie_recommendation.update({finished: @movie["finished"], recommendee_rating: @movie["recommendee_rating"]})
     render json: @movie.to_json, status: 200
   end
 
