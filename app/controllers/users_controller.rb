@@ -8,8 +8,11 @@ class UsersController < ApplicationController
   end
 
   def search
-    @users = User.where("first_name = ? or LOWER(first_name) = ? or last_name = ? or LOWER(last_name) = ?",
-    params[:name_search], params[:name_search], params[:name_search], params[:name_search])
+    @search_params = params[:name_search]
+    @search_first = params[:name_search].split(' ').first
+    @search_last = params[:name_search].split(' ').last
+    @users = User.where("first_name ILIKE ? or last_name ILIKE ? or first_name ILIKE ? or last_name ILIKE ?",
+    @search_params, @search_params, @search_first, @search_last)
     render json: @users.to_json, status: 200
   end
 

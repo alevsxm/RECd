@@ -13,4 +13,6 @@ App.BookRecommendationSearchResultListView = Backbone.View.extend({
     }, this);
   }
 
+  // need to use fragments here and in other similar places to increase efficiency
+
 });
