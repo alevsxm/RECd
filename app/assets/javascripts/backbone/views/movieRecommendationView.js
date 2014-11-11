@@ -11,16 +11,20 @@ App.MovieRecommendationView = Backbone.View.extend({
   events: {
     'click div': 'showMovieRecommendation'
   },
-  
+
   template: HandlebarsTemplates['movieRecommendations/movieRecommendationBrief'],
   render: function(){
     this.$el.html(this.template(this.model.toJSON()));
   },
 
-  showMovieRecommendation: function() {
+  showMovieRecommendation: function(e) {
     console.log("Show me the Modal!");
     App.movieRecommendationDetailView = new App.MovieRecommendationDetailView({model: this.model});
+    var position = e.pageY;
+    var modal = $('#rec-detail-modal');
     $('#rec-detail-modal').show();
+    modal.css({'top': position-150});
+
   },
 
   remove: function() {
