@@ -19,7 +19,10 @@ App.BookRecommendationView = Backbone.View.extend({
   showBookRecommendation: function() {
     console.log("Show me the Modal!");
     App.bookRecommendationDetailView = new App.BookRecommendationDetailView({model: this.model});
+    var position = e.pageY;
+    var modal = $('#rec-detail-modal');
     $('#rec-detail-modal').show();
+    modal.css({'top': position-150});
   },
 
   remove: function() {
