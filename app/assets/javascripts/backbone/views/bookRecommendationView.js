@@ -16,7 +16,7 @@ App.BookRecommendationView = Backbone.View.extend({
     this.$el.html(this.template(this.model.toJSON()));
   },
 
-  showBookRecommendation: function() {
+  showBookRecommendation: function(e) {
     console.log("Show me the Modal!");
     App.bookRecommendationDetailView = new App.BookRecommendationDetailView({model: this.model});
     var position = e.pageY;
