@@ -15,7 +15,7 @@ class TMDB
       director_and_plot =  tv_director_and_plot(result_hash[:tmdb_id])
       result_hash[:director] = director_and_plot[0]
       result_hash[:plot_summary] = director_and_plot[1]
-      result_hash[:cast] = tv_cast(result_hash[:tmdb_id]).take(5)
+      result_hash[:cast] = tv_cast(result_hash[:tmdb_id])
       result_hash[:media_type] = "tv"
       tv_results << result_hash
     end
@@ -62,6 +62,7 @@ class TMDB
       cast_member_names << cast_member["name"]
     end
     if cast_member_names.any?
+      cast_member_names = cast_member_names.take(5)
       cast_member_names = cast_member_names.join(', ')
     end
   end
